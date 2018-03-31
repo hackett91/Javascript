@@ -34,5 +34,32 @@ function init() {
 Generate the map for the snake
 */
 function createMap() {
+  document.write("<table>");
+
+  for(var y = 0; y < height; y++){
+    document.write("<tr>");
+    for(var x = 0; x< width; x++){
+      if(x == 0 || x == width - 1 || y ==0 || y == height-1){
+        document.write("<td class = 'wall' id = '"+x+"-"+y+"'></td>");
+        document.getElementById("")
+      }else {
+        document.write("<td class = 'blink' id = '"+x+"-"+y+"'></td>");
+
+      }
+    }
+    document.write("</tr>");
+  }
+
+  document.write("<table>");
+}
+function createSnake() {
+  set(snakeX, snakeY, "snake");
 
 }
+function get(x,y){
+  return document.getElementById(x+"-"+y);
+}
+function set(x, y, value){
+  get(x,y).setAttribute("class",value);
+}
+run();
